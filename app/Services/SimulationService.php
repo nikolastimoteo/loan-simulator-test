@@ -33,7 +33,7 @@ class SimulationService
      * @param  float  $loanValue
      * @return array
      */
-    public function simulate($choosenAgreements, $choosenInstitutions, $instalment, $loanValue)
+    public function simulate(array $choosenAgreements, array $choosenInstitutions, int $instalment, float $loanValue) : array
     {
         $allInstitutions = $this->institutionRepository->all();
         $allInstitutionTaxes = $this->institutionTaxRepository->all();
@@ -56,7 +56,7 @@ class SimulationService
                             array_push($simulations[$institution->chave], [
                                 'taxas'         => $institutionTax->taxaJuros,
                                 'parcelas'      => $institutionTax->parcelas,
-                                'valor_parcela' => round($loanValue * $institutionTax->coeficiente, 2),
+                                'valor_parcela' => calculate_loan_instalment_value($loanValue, $institutionTax->coeficiente),
                                 'convenio'      => $institutionTax->convenio
                             ]);
                         }
