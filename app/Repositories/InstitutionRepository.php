@@ -18,7 +18,7 @@ class InstitutionRepository implements InstitutionRepositoryInterface
      * @author Níkolas Timóteo <nikolastps@hotmail.com>
      * @return array
      */
-    public function all()
+    public function all() : array
     {
         return $this->institutions;
     }
