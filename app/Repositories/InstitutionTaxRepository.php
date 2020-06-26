@@ -2,14 +2,14 @@
 
 namespace App\Repositories;
 
-class InstitutionRepository implements InstitutionRepositoryInterface
+class InstitutionTaxRepository implements InstitutionTaxRepositoryInterface
 {
-    protected $institutions;
+    protected $institutionTaxes;
 
     public function __construct()
     {
-        $institutionsJsonString = file_get_contents(base_path('resources/json/instituicoes.json'));
-        $this->institutions = json_decode($institutionsJsonString);
+        $institutionTaxesJsonString = file_get_contents(base_path('resources/json/taxas_instituicoes.json'));
+        $this->institutionTaxes = json_decode($institutionTaxesJsonString);
     }
 
     /**
@@ -20,6 +20,6 @@ class InstitutionRepository implements InstitutionRepositoryInterface
      */
     public function all() : array
     {
-        return $this->institutions;
+        return $this->institutionTaxes;
     }
 }

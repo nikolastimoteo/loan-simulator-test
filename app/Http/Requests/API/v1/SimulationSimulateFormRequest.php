@@ -24,10 +24,10 @@ class SimulationSimulateFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'valor_emprestimo' => 'required|numeric',
+            'valor_emprestimo' => 'required|numeric|min:1',
             'instituicoes'     => 'sometimes|nullable|array',
             'convenios'        => 'sometimes|nullable|array',
-            'parcela'          => 'sometimes|nullable|integer'
+            'parcela'          => 'sometimes|nullable|integer|min:1'
         ];
     }
 
@@ -39,10 +39,11 @@ class SimulationSimulateFormRequest extends FormRequest
     public function messages()
     {
         return [
-            'required'    => 'Campo obrigatório.',
-            'array'       => 'Escolha uma ou mais opções.',
-            'numeric'     => 'Digite um valor numérico.',
-            'integer'     => 'Digite um número inteiro.'
+            'required' => 'Campo obrigatório.',
+            'array'    => 'Escolha uma ou mais opções.',
+            'numeric'  => 'Digite um valor numérico.',
+            'integer'  => 'Digite um número inteiro.',
+            'min'      => 'Valor mínimo aceito: 1'
         ];
     }
 }

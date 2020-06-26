@@ -13,7 +13,12 @@ class InstitutionTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJsonStructure([
-                'instituicoes'
+                'instituicoes' => [
+                    [
+                        'chave',
+                        'valor'
+                    ]
+                ]
             ]);
     }
 }

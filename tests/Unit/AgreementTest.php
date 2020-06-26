@@ -13,7 +13,12 @@ class AgreementTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertJsonStructure([
-                'convenios'
+                'convenios' => [
+                    [
+                        'chave',
+                        'valor'
+                    ]
+                ]
             ]);
     }
 }
