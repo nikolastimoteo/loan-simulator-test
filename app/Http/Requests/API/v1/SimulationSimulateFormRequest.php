@@ -27,7 +27,7 @@ class SimulationSimulateFormRequest extends FormRequest
             'valor_emprestimo' => 'required|numeric|min:1',
             'instituicoes'     => 'sometimes|nullable|array',
             'convenios'        => 'sometimes|nullable|array',
-            'parcela'          => 'sometimes|nullable|integer|min:1'
+            'parcela'          => 'sometimes|nullable|integer|min:0'
         ];
     }
 
@@ -43,7 +43,7 @@ class SimulationSimulateFormRequest extends FormRequest
             'array'    => 'Escolha uma ou mais opções.',
             'numeric'  => 'Digite um valor numérico.',
             'integer'  => 'Digite um número inteiro.',
-            'min'      => 'Valor mínimo aceito: 1'
+            'min'      => 'Valor mínimo aceito: :min'
         ];
     }
 }

@@ -65,7 +65,7 @@ class SimulationTest extends TestCase
         $response = $this->postJson('/api/v1/simular', [
             'convenios'        => 'a',
             'instituicoes'     => 'b',
-            'parcela'          => 0,
+            'parcela'          => -1,
             'valor_emprestimo' => 2400.5
         ]);
 
