@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\InstitutionRepository;
 use App\Repositories\InstitutionRepositoryInterface;
+use App\Repositories\AgreementRepository;
+use App\Repositories\AgreementRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -26,5 +28,6 @@ class RepositoryServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind(InstitutionRepositoryInterface::class, InstitutionRepository::class);
+        $this->app->bind(AgreementRepositoryInterface::class, AgreementRepository::class);
     }
 }

@@ -4,15 +4,15 @@ namespace App\Http\Controllers\API\v1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Repositories\InstitutionRepositoryInterface;
+use App\Repositories\AgreementRepositoryInterface;
 
-class InstitutionController extends Controller
+class AgreementController extends Controller
 {
-    private $institutionRepository;
+    private $agreementRepository;
 
-    public function __construct(InstitutionRepositoryInterface $institutionRepository)
+    public function __construct(AgreementRepositoryInterface $agreementRepository)
     {
-        $this->institutionRepository = $institutionRepository;
+        $this->agreementRepository = $agreementRepository;
     }
 
     /**
@@ -24,7 +24,7 @@ class InstitutionController extends Controller
     public function index()
     {
         return response([
-            'instituicoes' => $this->institutionRepository->all()
+            'convenios' => $this->agreementRepository->all()
         ], 200);
     }
 }
