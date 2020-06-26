@@ -7,6 +7,8 @@ use App\Repositories\InstitutionRepository;
 use App\Repositories\InstitutionRepositoryInterface;
 use App\Repositories\AgreementRepository;
 use App\Repositories\AgreementRepositoryInterface;
+use App\Repositories\InstitutionTaxRepository;
+use App\Repositories\InstitutionTaxRepositoryInterface;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -29,5 +31,6 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(InstitutionRepositoryInterface::class, InstitutionRepository::class);
         $this->app->bind(AgreementRepositoryInterface::class, AgreementRepository::class);
+        $this->app->bind(InstitutionTaxRepositoryInterface::class, InstitutionTaxRepository::class);
     }
 }
