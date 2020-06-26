@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::group(['namespace' => 'API\v1', 'prefix' => 'v1'], function () {
     Route::get('instituicoes', 'InstitutionController@index');
+    Route::get('convenios', 'AgreementController@index');
 });
